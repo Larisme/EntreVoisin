@@ -52,14 +52,6 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mNeighbour = (Neighbour) getIntent().getSerializableExtra("Neighbour");
         NeighbourApiService mNeighbourApiService = DI.getNeighbourApiService();
         List<Neighbour> neighbours = mNeighbourApiService.getNeighbours();
-        for ( Neighbour neighbour: neighbours )
-        {
-            if (neighbour.getId() == mNeighbour.getId())
-            {
-                mNeighbour = neighbour;
-                break;
-            }
-        }
 
         Glide.with(mNeighbourAvatar.getContext())
                 .load(mNeighbour.getAvatarUrl())
